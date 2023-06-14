@@ -85,19 +85,9 @@ require("lazy").setup({
 		'nvim-treesitter/nvim-treesitter'
 	},
 	{
-		"Diogo-ss/42-header.nvim",
-		lazy = false,
-		config = function()
-			local header = require("42header")
-			header.setup({
-				default_map = true, -- Default Mapping <F1> in normal mode
-				auto_update = true,  -- Update header when saving
-				user = "johmatos", -- Your user
-				mail = "johmatos@student.42sp.org.br", -- Your mail
-			})
-		end
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
 	},
-
 })
 
 require ('mappings')
