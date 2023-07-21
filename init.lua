@@ -30,7 +30,9 @@ require("lazy").setup({
 		end,
 	},
 	{
-		'hardyrafael17/norminette42.nvim',
+		dir = "~/.config/nvim/lua/plugins/norminette42.nvim",
+		name = "norminette",
+		dev = true,
 		lazy = false,
 		config = function()
 			require("norminette").setup()
@@ -82,11 +84,38 @@ require("lazy").setup({
 		end
 	},
 	{
-		'nvim-treesitter/nvim-treesitter'
+		'nvim-treesitter/nvim-treesitter',
+		config = function()
+			require('plugins.treesitter')
+		end
+
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+		dependencies = { 
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim"
+		}
+	},
+	{'hrsh7th/nvim-cmp'	},
+	{'hrsh7th/cmp-nvim-lsp'},
+	{'saadparwaiz1/cmp_luasnip'},
+	{'L3MON4D3/LuaSnip'},
+	{
+		'nvim-tree/nvim-tree.lua',
+		dependencies = {'nvim-tree/nvim-web-devicons'},
+		config = function()
+			require("nvim-tree").setup()
+		end
+	},
+	{'onsails/lspkind.nvim'},
+	{ "lukas-reineke/indent-blankline.nvim" },
+	{"tpope/vim-fugitive"},
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("plugins.gitsigns")
+		end
 	},
 })
 
