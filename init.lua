@@ -28,10 +28,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		dir = "~/.config/nvim/lua/plugins/norminette42.nvim",
-		name = "norminette",
-		dev = true,
-		lazy = false,
+		"astahjmo/nvim",
 		config = function()
 			require("norminette").setup()
 		end
