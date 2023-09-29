@@ -1,7 +1,7 @@
 -- Setup language servers.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local servers = { 'pyright', 'clangd', 'pyright', 'tssserver', 'crystalline', 'luau_lsp', 'lua-language-serve', 'lua_ls' }
+local servers = { 'pyright', 'clangd', 'pyright', 'crystalline', 'luau_lsp', 'lua_ls' }
 for _, lsp in ipairs(servers) do
 	require('lspconfig')[lsp].setup {
 		capabilities = capabilities,

@@ -1,5 +1,5 @@
-require ('core')
-require ('autocmds')
+require('core')
+require('autocmds')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	"folke/which-key.nvim",
-	{ "folke/neoconf.nvim", cmd = "Neoconf" },
+	{ "folke/neoconf.nvim",         cmd = "Neoconf" },
 	"folke/neodev.nvim",
 	{
 		"folke/tokyonight.nvim",
@@ -28,7 +28,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"astahjmo/nvim",
+		"hardyrafael17/norminette42.nvim",
 		config = function()
 			require("norminette").setup()
 		end
@@ -66,14 +66,15 @@ require("lazy").setup({
 		lazy = false,
 	},
 	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.1',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
-	{'nvim-tree/nvim-web-devicons'},
-	{'voldikss/vim-floaterm'},
+	{ 'nvim-tree/nvim-web-devicons' },
+	{ 'voldikss/vim-floaterm' },
 	{
 		'nvim-lualine/lualine.nvim',
-		dependencies =  { 'nvim-tree/nvim-web-devicons', opt = true },
+		dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
 		config = function()
 			require('lualine').setup()
 		end
@@ -87,25 +88,25 @@ require("lazy").setup({
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { 
+		dependencies = {
 			"nvim-telescope/telescope.nvim",
 			"nvim-lua/plenary.nvim"
 		}
 	},
-	{'hrsh7th/nvim-cmp'	},
-	{'hrsh7th/cmp-nvim-lsp'},
-	{'saadparwaiz1/cmp_luasnip'},
-	{'L3MON4D3/LuaSnip'},
+	{ 'hrsh7th/nvim-cmp' },
+	{ 'hrsh7th/cmp-nvim-lsp' },
+	{ 'saadparwaiz1/cmp_luasnip' },
+	{ 'L3MON4D3/LuaSnip' },
 	{
 		'nvim-tree/nvim-tree.lua',
-		dependencies = {'nvim-tree/nvim-web-devicons'},
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		config = function()
 			require("nvim-tree").setup()
 		end
 	},
-	{'onsails/lspkind.nvim'},
+	{ 'onsails/lspkind.nvim' },
 	{ "lukas-reineke/indent-blankline.nvim" },
-	{"tpope/vim-fugitive"},
+	{ "tpope/vim-fugitive" },
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -115,21 +116,23 @@ require("lazy").setup({
 	{
 		'jlcrochet/vim-crystal'
 	},
-	  {'romgrk/barbar.nvim',
+	{
+		'romgrk/barbar.nvim',
 		dependencies = {
-		  'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-		  'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
 		},
 		init = function() vim.g.barbar_auto_setup = false end,
 		opts = {
-		  -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-		  -- animation = true,
-		  -- insert_at_start = true,
-		  -- …etc.
+			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+			-- animation = true,
+			-- insert_at_start = true,
+			-- …etc.
 		},
 		version = '^1.0.0', -- optional: only update when a new 1.x version is released
-	  },
+	},
+	{ 'wakatime/vim-wakatime' },
+	{'ojroques/vim-oscyank'}
+
 })
-
-
-require ('mappings')
+require('mappings')
